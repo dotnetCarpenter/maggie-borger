@@ -1,0 +1,65 @@
+---
+import DefaultLayout from "../layouts/Default.astro"
+
+import { Image } from "astro:assets"
+
+import survival from "../images/borger-survival.jpg"
+import broken from "../images/broken.jpg"
+import seal from "../images/seal.jpg"
+import liferecline from "../images/liferecline.jpg"
+import strawberryCake640 from "../images/large/tashstrawberyrose.jpg"
+import macaron640 from "../images/large/macaron640.jpg"
+---
+
+<DefaultLayout title="Works" description="Maggie Borger Art">
+  <div class="image-grid">
+    <!-- max-width calulation for image: 1200 - (2 * 20) = 1160 -> 1160 / 3 = 386.666666667 -->
+    <figure>
+      <Image width="386.666666667" src={survival} alt="Sculpture" />
+      <figcaption>Sculpture</figcaption>
+    </figure>
+
+    <figure>
+      <Image width="386.666666667" src={broken} alt="Paintings" />
+      <figcaption>Paintings</figcaption>
+    </figure>
+
+    <figure>
+      <Image width="386.666666667" src={seal} alt="Prints" />
+      <figcaption>Prints</figcaption>
+    </figure>
+
+    <figure>
+      <Image width="386.666666667" src={liferecline} alt="Drawing" />
+      <figcaption>Drawing</figcaption>
+    </figure>
+
+    <figure>
+      <Image width="386.666666667" src={strawberryCake640} alt="Photography" />
+      <figcaption>Photography</figcaption>
+    </figure>
+
+    <figure>
+      <Image width="386.666666667" src={macaron640} alt="Film" />
+      <figcaption>Film</figcaption>
+    </figure>
+  </div>
+</DefaultLayout>
+
+<style>
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .image-grid figure {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 640px) {
+    .image-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

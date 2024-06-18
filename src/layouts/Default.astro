@@ -1,0 +1,78 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+
+const { title, description } = Astro.props
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <ViewTransitions/>
+</head>
+
+<body>
+    <header>
+        <h1>{title}</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="works">Works</a></li>
+                <li><a href="biography">Biography</a></li>
+                <li><a href="contact">Contact me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <slot></slot>
+
+    <footer>
+        &copy; Maggie Borger 2023
+    </footer>
+</body>
+</html>
+
+<style is:global>
+/* CSS Document */
+body {
+	width: 90%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family: "circular", sans-serif;
+}
+
+footer {
+	text-align: center;
+	margin-top: 40px;
+	font-size: 90%
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+	text-align: left;
+}
+
+nav a {
+	color: black;
+	text-decoration: 0;
+	padding: 5px;
+	margin-left: 0;
+	transition: .3s;
+	display: inline-block;
+}
+
+nav a:hover {
+	transform: scale(1.1);
+	color: #0C243C;
+}
+</style>
