@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import images from "./Images.js";
+const {BASE_URL} = import.meta.env;
+---
+
+<script src={`${BASE_URL}/js/imageSlider.js`} type="text/javascript"></script>
+
+<div class="slideshow">
+  {
+    images.map(img => (
+      <Image
+        src={img}
+        height="400"
+        alt=""
+        onload="slide(this)"
+      />
+    ))
+  }
+</div>
+
+<style>
+  .slideshow {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 0;
+    height: 400px;
+  }
+
+  img {
+    position: absolute;
+    opacity: 0;
+  }
+</style>
