@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import imagePaths from "./Images.js";
+
+const images = imagePaths.map(
+  (src) => import(/* @vite-ignore */ `../images/${src}.jpg`)
+);
+---
+
+<script is:inline>
+  "use strict";
+
+  const xfade = [
+	{ opacity: 0 },
+	{ opacity: 1 },
+  ];
+
+  let images = [],
+    counter = 0,
+    isPlaying = false,
+	oldAnimation;
+
+  function slide(img) {
+    images.push(img);
+    firstShow();
+  }
+
+  function firstShow() {
+    if (isPlaying) return;
+    isPlaying = true;
+    playShow();
+  }
+
+  function playShow() {
+    const numberOfImages = images.length;
+    const currentImage   = images.at(counter++ % numberOfImages);
+	if (oldAnimation) {
+		console.debug("hide previous image")
+		oldAnimation.reverse();
+	}
+
+    console.debug("Show image");
+	oldAnimation = currentImage.animate (xfade, {duration: 2000, fill: "forwards"})
+
+    setTimeout(playShow, 6000);
+  }
+</script>
+
+<div class="slideshow">
+  {
+    images.map((img, index) => (
+      <Image
+        src={img}
+        height="400"
+        alt=""
+        onload="slide(this)"
+      />
+    ))
+  }
+</div>
+
+<style>
+  .slideshow {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 0;
+    height: 400px;
+  }
+
+  img {
+    position: absolute;
+    opacity: 0;
+  }
+</style>
