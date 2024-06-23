@@ -18,17 +18,20 @@ const {BASE_URL} = import.meta.env
 <body>
     <header>
         <h1>{title}</h1>
-        <nav>
-            <ul>
-                <li><a href={BASE_URL}>Home</a></li>
-                <li><a href={`${BASE_URL}/works`}>Works</a></li>
-                <li><a href={`${BASE_URL}/biography`}>Biography</a></li>
-                <li><a href={`${BASE_URL}/contact`}>Contact me</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <slot></slot>
+	<nav>
+		<ul>
+			<li><a href={BASE_URL}>Home</a></li>
+			<li><a href={`${BASE_URL}/works`}>Works</a></li>
+			<li><a href={`${BASE_URL}/biography`}>Biography</a></li>
+			<li><a href={`${BASE_URL}/contact`}>Contact me</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<slot></slot>
+	</main>
 
     <footer>
         &copy; Maggie Borger 2023
@@ -38,42 +41,87 @@ const {BASE_URL} = import.meta.env
 
 <style is:global>
 /* CSS Document */
+
+/* Utilities */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Layout */
 body {
+	width: min(90%, 1200px);
+	/* The min function is the same as below:
 	width: 90%;
-	max-width: 1200px;
+	max-width: 1200px; */
+	margin: 40px auto;
+	/* The main short-hand is the same as below:
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 40px;
 	margin-bottom: 40px;
+	*/
+
 	font-family: "circular", sans-serif;
+	line-height: 1.6;
+
+	display: grid;
+	grid-template-columns: 6fr 20fr;
+	grid-template-rows: min-content auto min-content;
+	grid-template-areas: "header header"
+						 "nav main"
+						 ". footer";
 }
 
-footer {
-	text-align: center;
-	margin-top: 40px;
-	font-size: 90%
+@media (max-width: 636px) {
+	body {
+		grid-template-areas:"header header"
+							"nav nav"
+							"main main"
+							"footer footer";
+	}
 }
-img {
-	max-width: 100%;
-	height: auto;
+
+header {
+	grid-area: header;
+}
+
+nav {
+	grid-area: nav;
 }
 nav ul {
 	list-style: none;
 	padding: 0;
 	text-align: left;
 }
-
 nav a {
-	color: black;
-	text-decoration: 0;
-	padding: 5px;
-	margin-left: 0;
-	transition: .3s;
 	display: inline-block;
-}
+	margin-left: 0;
+	padding: .5em;
 
+	text-decoration: none;
+	color: black;
+	transition: .3s;
+}
 nav a:hover {
 	transform: scale(1.1);
 	color: #0C243C;
+}
+
+main {
+	grid-area: main;
+    margin-top: 1.5em;
+}
+@media (max-width: 636px) {
+	main {
+		margin-top: 0;
+	}
+}
+
+footer {
+	grid-area: footer;
+	text-align: center;
+	margin-top: 40px;
+	font-size: smaller;
 }
 </style>

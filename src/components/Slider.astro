@@ -11,9 +11,10 @@ const {BASE_URL} = import.meta.env;
     images.map(img => (
       <Image
         src={img}
-        height="400"
+        height="600"
         alt=""
         onload="slide(this)"
+        class="slider-img"
       />
     ))
   }
@@ -22,14 +23,25 @@ const {BASE_URL} = import.meta.env;
 <style>
   .slideshow {
     position: relative;
+    height: 600px;
     margin: 0 auto;
-    margin-top: 5%;
     padding: 0;
-    height: 400px;
+    display: flex;
+    justify-content: center;
   }
 
   img {
     position: absolute;
     opacity: 0;
+  }
+  @media (max-width: 400px) {
+    .slideshow {
+      height: auto;
+      height: 50vh;
+      max-width: 400px;
+    }
+    img {
+      max-height: 50vh;
+    }
   }
 </style>
