@@ -13,7 +13,7 @@ import images from "./Images.js";
         height="600"
         alt="Art by Maggie Borger"
         onload="slide(this)"
-        class="slider-img"
+        class="slideshow__image"
       />
     ))
   }
@@ -21,21 +21,16 @@ import images from "./Images.js";
 
 <style>
   .slideshow {
-    position: relative;
-    height: 600px;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+    display: grid;
   }
 
-  img {
-    position: absolute;
+  .slideshow__image {
+    grid-area: 1/1;
     opacity: 0;
+    justify-self: center;
   }
   @media (max-width: 636px) {
     .slideshow {
-      height: 450px;
     }
   }
 </style>
