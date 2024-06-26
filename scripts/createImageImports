@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-image_file_path="./src/components/Image.js"
+image_file_path="./src/components/Images.js"
 image_path="../images/"
 images=()
 
@@ -33,7 +33,7 @@ printImagesFile () {
 
 for path in ./src/images/*.jpg; do
 	# img="${path##*/}"
-  # images+=( "${img%%.*}" )
+    # images+=( "${img%%.*}" )
 	images+=( "${path##*/}" )
 done
 
