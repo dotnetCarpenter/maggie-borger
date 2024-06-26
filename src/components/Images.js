@@ -1,3 +1,4 @@
+/***** GENERATED IMAGE IMPORT FILE - created by createImageImports *****/
 import image0 from "../images//borger-survival.jpg";
 import image1 from "../images//borger-thecomment.jpg";
 import image2 from "../images//bottle brush 1.jpg";
@@ -21,29 +22,4 @@ import image19 from "../images//liferecline.jpg";
 import image20 from "../images//sea gift.jpg";
 import image21 from "../images//seal.jpg";
 import image22 from "../images//wheel.jpg";
-
-export default [
-  image0,
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
-  image16,
-  image17,
-  image18,
-  image19,
-  image20,
-  image21,
-  image22,
-];
+export default [image0,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15,image16,image17,image18,image19,image20,image21,image22,];
