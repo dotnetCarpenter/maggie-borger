@@ -5,36 +5,36 @@ image_path="../images/"
 images=()
 
 getImports () {
-	# 'import imagePaths from "./Images.js";'
-	for i in "${!images[@]}"; do
-		echo "import image$i from \"$image_path/${images[$i]}\";"
-	done
+    # 'import imagePaths from "./Images.js";'
+    for i in "${!images[@]}"; do
+        echo "import image$i from \"$image_path/${images[$i]}\";"
+    done
 }
 
 getExportArray () {
-	local beginning="export default ["
-	local ending="];"
-	local exportString=$beginning
+    local beginning="export default ["
+    local ending="];"
+    local exportString=$beginning
 
-	for i in "${!images[@]}"; do
-		exportString+="image$i,"
-	done
+    for i in "${!images[@]}"; do
+        exportString+="image$i,"
+    done
 
-	echo "$exportString$ending"
+    echo "$exportString$ending"
 }
 
 printImagesFile () {
-	echo "/***** GENERATED IMAGE IMPORT FILE - created by createImageImports *****/"
-	getImports
-	getExportArray
+    echo "/***** GENERATED IMAGE IMPORT FILE - created by createImageImports *****/"
+    getImports
+    getExportArray
 }
 
 # images=$(ls ./src/images/*.jpg)
 
 for path in ./src/images/*.jpg; do
-	# img="${path##*/}"
+    # img="${path##*/}"
     # images+=( "${img%%.*}" )
-	images+=( "${path##*/}" )
+    images+=( "${path##*/}" )
 done
 
 printImagesFile > $image_file_path
