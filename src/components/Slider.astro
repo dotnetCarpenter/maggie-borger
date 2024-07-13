@@ -12,8 +12,10 @@ import images from "./Images.js";
         src={img}
         height="600"
         alt="Art by Maggie Borger"
-        onload="slide(this)"
+        onload="addToSlideShow(this)"
         class="slideshow__image"
+        loading="eager"
+        decoding="async"
       />
     ))
   }

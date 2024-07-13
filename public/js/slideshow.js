@@ -4,15 +4,15 @@ const images = [],
   xfade = [{ opacity: 0 }, { opacity: 1 }];
 
 let counter = 0,
-  oldAnimation;
+  currentAnimation;
 
-function slide(img) {
+function addToSlideShow(img) {
   images.push(img);
-  firstShow();
+  startShow();
 }
 
-function firstShow() {
-  if (oldAnimation) return;
+function startShow() {
+  if (currentAnimation) return;
   playShow();
 }
 
@@ -20,13 +20,13 @@ function playShow() {
   const numberOfImages = images.length;
   const currentImage = images.at(counter++ % numberOfImages);
 
-  if (oldAnimation) {
+  if (currentAnimation) {
     // console.debug("hide previous image");
-    oldAnimation.reverse();
+    currentAnimation.reverse();
   }
 
   // console.debug("Show image", currentImage.src.slice(116, 140));
-  oldAnimation = currentImage.animate(xfade, {
+  currentAnimation = currentImage.animate(xfade, {
     duration: 2000,
     fill: "forwards",
   });
