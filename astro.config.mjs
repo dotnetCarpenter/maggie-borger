@@ -5,5 +5,6 @@ export default defineConfig({
     site: 'https://maggie-borger.com',
     build: {
         inlineStylesheets: 'never'
-    }
+    },
+    trailingSlash: 'always'
 });
