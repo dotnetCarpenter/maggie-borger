@@ -1,7 +1,10 @@
 ---
-// import { ViewTransitions } from 'astro:transitions'
+// import { ViewTransitions } from "astro:transitions"
 
 const { title, description } = Astro.props
+
+const addPath = url => path => `https://${url.hostname}/${path}`
+const addPathToSite = addPath (Astro.site)
 ---
 
 <html lang="en">
@@ -17,15 +20,15 @@ const { title, description } = Astro.props
   <meta property="og:type" content="website">
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
-  <meta property="og:image" content=`${Astro.site}/favicon.svg`>
+  <meta property="og:image" content={addPathToSite ("favicon.svg")}>
 
     <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content={new URL (Astro.site).hostname}>
+  <meta property="twitter:domain" content={Astro.site.hostname}>
   <meta property="twitter:url" content={Astro.site}>
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
-  <meta name="twitter:image" content=`${Astro.site}/favicon.svg`>
+  <meta name="twitter:image" content={addPathToSite ("favicon.svg")}>
 
 <!-- <ViewTransitions/> -->
 </head>
