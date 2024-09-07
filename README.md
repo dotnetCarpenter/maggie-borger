@@ -41,15 +41,20 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 ## How to save changes and deploy the website
 
-Whenever you make a change, it needs to be stored in `git` and pushed to the git-server (that currently is github.com).
+Whenever you make a change, it needs to be stored in `git` and pushed to the git-server (that's currently github.com).
 
 E.i, I make a change to this file, `README.md` and want to save it for everyone, I have to do three things:
 
 1.  Save the file to disc (usually <kbd>Ctrl</kbd> + <kbd>S</kbd> or <kbd>Command</kbd> + <kbd>S</kbd>).
-2.  Add and commit all changes (can be several files) to `git`. <br>`git add [PATH]` and `git commit -m`
+2.  Add and commit all changes (can be several files) to `git`. <br>`git add [file]` and `git commit -m "[descriptive message]"`
 3. Push the changes to the git-server. `git push`.
 
-Check out [the overview table at the bottom](/README.md#-commands).
+When you successfully do a `git push` a new version of the website will be generated and
+[deployed](https://github.com/dotnetCarpenter/maggie-borger/deployments).
+
+Use `npm run dev` to to see how the new website will look, before you deploy it.
+
+Check out [the command overview table at the bottom](#-commands).
 
 
 ## 🖼️ New images for the slider
@@ -69,7 +74,8 @@ You can manually edit the file but be aware that when running `scripts/createIma
 
 Remember to add your changes to `git`.
 
-_In the future, a better implementation will be to use [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)._
+_In the future, a better implementation will be to use
+[Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)._
 
 ## 🧞 Commands
 
@@ -91,8 +97,11 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Learn some useful `git` commands, visit [GitHub Training Kit Cheat Sheet](https://training.github.com/downloads/github-git-cheat-sheet/).
+Learn some useful `git` commands, visit
+[GitHub Training Kit Cheat Sheet](https://training.github.com/downloads/github-git-cheat-sheet/).
 
-Learn how to use Astro, to build websites, feel free to check [the documentation](https://docs.astro.build) or jump into the Astro [Discord server](https://astro.build/chat).
+Learn how to use Astro, to build websites, feel free to check [the documentation](https://docs.astro.build) or jump into the
+Astro [Discord server](https://astro.build/chat).
 
-Check-out non Astro specefic [`npm` commands with DuckDuckGo](https://duckduckgo.com/?q=npm+commands&t=newext&atb=v397-1&ia=cheatsheet).
+Check-out non Astro specefic
+[`npm` commands with DuckDuckGo](https://duckduckgo.com/?q=npm+commands&t=newext&atb=v397-1&ia=cheatsheet).
