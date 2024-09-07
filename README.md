@@ -69,7 +69,7 @@ This will generate `src/components/Images.js` which is responsible for loading a
 The images will load in the line order of  `Images.js`, but displayed in the order that your browser downloads the image,
 which in turn depends on the image size, after Astro have optimised the image, and your network speed.
 
-All images are cached for 1 minute, so re-loads of the main page will display the images in the order given by `Images.js`.
+All images are cached for 10 minute (Github Pages specific value), so re-loads of the main page will display the images in the order given by `Images.js`.
 You can manually edit the file but be aware that when running `scripts/createImageImports`, everything will be overwritten.
 
 Remember to add your changes to `git`.
