@@ -1,13 +1,13 @@
 # Site instructions
 
-- [🚀 Project Structure](#-project-structure)
-- [How to save changes and deploy the website](#how-to-save-changes-and-deploy-the-website)
+- [📐👷🏻‍♀️ Project Structure](#️-project-structure)
+- [🚀 How to save changes and deploy the website](#-how-to-save-changes-and-deploy-the-website)
 - [🖼️ New images for the slider](#️-new-images-for-the-slider)
 - [🧞 Commands](#-commands)
 - [👀 Want to learn more?](#-want-to-learn-more)
 
 
-## 🚀 Project Structure
+## 📐👷🏻‍♀️ Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -39,7 +39,7 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## How to save changes and deploy the website
+## 🚀 How to save changes and deploy the website
 
 Whenever you make a change, it needs to be stored in `git` and pushed to the git-server (that's currently github.com).
 
