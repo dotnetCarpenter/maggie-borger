@@ -130,6 +130,11 @@ footer {
 }
 /* Mobile sizes */
 @media (max-width: 636px) {
+  body {
+    grid-template-areas:"header header"
+                        "nav main"
+                        "footer footer"; /* center copyright on small screens */
+  }
   main {
     margin-top: .4em; /* could be 0.5 but looks better when it's 0.4? */
   }
